@@ -7,10 +7,10 @@
 (setq initial-scratch-message "")
 
 (fset 'yes-or-no-p 'y-or-n-p)
+(menu-bar-mode -1)
 
 (when (window-system)
   (tool-bar-mode 0)
-  (menu-bar-mode -1)
   (when (fboundp 'horizontal-scroll-bar-mode)
     (horizontal-scroll-bar-mode -1))
   (scroll-bar-mode -1))

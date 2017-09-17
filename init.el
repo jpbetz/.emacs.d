@@ -4,8 +4,7 @@
 ;; Local Initialization
 (setq local-init-file (expand-file-name "~/.emacs.d/local-init.el"))
 (when (file-exists-p local-init-file)
-  (load-file local-init-file)
-  (require 'local-init))
+  (load-file local-init-file))
 
 ;; Packages
 (package-initialize)
@@ -29,8 +28,7 @@
 ;; Local Configuration
 (setq local-config-file (expand-file-name "~/.emacs.d/local-config.el"))
 (when (file-exists-p local-config-file)
-  (load-file local-config-file)
-  (require 'local-config))
+  (load-file local-config-file))
 
 ;; References
 ;; https://github.com/howardabrams/dot-files/blob/master/emacs.org

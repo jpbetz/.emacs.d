@@ -2,6 +2,11 @@
 (column-number-mode 1)
 
 (use-package spaceline-config :ensure spaceline
+  :init
+  (setq powerline-default-separator 'utf-8)
+  (setq powerline-utf-8-separator-left ?)
+  (setq powerline-utf-8-separator-right ?)
+  
   :config
   (require 'goenv)
 
