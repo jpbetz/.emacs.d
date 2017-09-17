@@ -6,8 +6,10 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 (unless (package-installed-p 'use-package)
+  (message "use-package not installed, installing")
   (package-refresh-contents)
-  (package-install 'use-package))
+  (package-install 'use-package)
+  (message "use-package installed"))
 
 (require 'use-package)
 (setq use-package-always-ensure t)

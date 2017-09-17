@@ -1,14 +1,15 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/config"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
+;; Local Initialization
+(setq local-init-file (expand-file-name "~/.emacs.d/local-init.el"))
+(when (file-exists-p local-init-file)
+  (load-file local-init-file)
+  (require 'local-init))
+
 ;; Packages
 (package-initialize)
 (require 'config-packaging)
-
-;; TODO: What's the right way to conditionally load a elisp project?
-(when (file-exists-p (expand-file-name "~/.emacs.d/local-init.el"))
-  (load-file (expand-file-name "~/.emacs.d/local-init.el"))
-  (require 'local-init))
 
 ;; Basic Config
 (require 'config-display)
@@ -25,6 +26,11 @@
 ;; Language Config
 (require 'config-go)
 
+;; Local Configuration
+(setq local-config-file (expand-file-name "~/.emacs.d/local-config.el"))
+(when (file-exists-p local-config-file)
+  (load-file local-config-file)
+  (require 'local-config))
 
 ;; References
 ;; https://github.com/howardabrams/dot-files/blob/master/emacs.org

@@ -1,5 +1,8 @@
 ;; Keep custom theme settings in a gitignored file
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-theme-file (expand-file-name "~/.emacs.d/custom.el"))
+(when (not (file-exists-p custom-theme-file))
+  (write-region "" nil custom-theme-file))
+(setq custom-file custom-theme-file)
 (load custom-file)
 
 ;;(use-package solarized-theme :config (load-theme 'solarized-dark t))

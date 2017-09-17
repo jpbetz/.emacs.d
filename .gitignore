@@ -4,5 +4,6 @@ backups
 custom.el
 eshell
 elpa
+local-config.el
 local-init.el
 network-security.data

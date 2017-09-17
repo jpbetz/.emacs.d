@@ -10,7 +10,7 @@
   (file-exists-p (concat dir "/.goenv")))
 
 (defun goenv-list-projects ()
-  "List all goenv projects under ~/Projects."
+  "List all goenv projects under goenv-project-dir."
   (mapcar 'file-name-nondirectory (seq-filter 'goenv-is-project (directory-files (expand-file-name goenv-project-dir) t))))
 
 (defun goenv-get-property (goenv-file property)
@@ -30,8 +30,10 @@
                 (completing-read "Project:" (goenv-list-projects))))
   (let ((project-path (concat goenv-project-dir project))
         (goenv-file (concat goenv-project-dir project "/.goenv")))
+    (message (concat "loading project:" project-path " and file:" goenv-file))
     (setq goenv-active-project project)
-    (goenv-set-environment project-path (goenv-get-property goenv-file :gvm))
+    (setq goenv-gvm-version (goenv-get-property goenv-file :gvm))
+    (goenv-set-environment project-path goenv-gvm-version)
     (dired (concat project-path "/src/" (goenv-get-property goenv-file :project)))))
 
 (provide 'goenv)

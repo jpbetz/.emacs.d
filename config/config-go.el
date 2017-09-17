@@ -8,9 +8,10 @@
             (local-set-key (kbd "M-[") 'pop-tag-mark))))
 
 (use-package go-guru)
+(use-package company-go)
 
 ;; goenv project switching.
-(setq goenv-project-dir (concat (getenv "HOME") "/Projects/"))
+(setq goenv-project-dir (concat (getenv "HOME") "/projects/"))
 (setq goenv-gvm-dir (concat (getenv "HOME") "/.gvm/gos/"))
 (setq goenv-original-path (getenv "PATH"))
 (require 'goenv)

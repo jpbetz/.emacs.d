@@ -15,7 +15,7 @@
     (horizontal-scroll-bar-mode -1))
   (scroll-bar-mode -1))
 
-(setq ring-bell-function (lambda () (message "♪")))
+;;(setq ring-bell-function (lambda () (message "♪")))
 
 (global-linum-mode t)
 
