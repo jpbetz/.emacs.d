@@ -1,5 +1,8 @@
-custom.el
-backups
 auto-saves
 auto-save-list
+backups
+custom.el
+eshell
 elpa
+local-init.el
+network-security.data
