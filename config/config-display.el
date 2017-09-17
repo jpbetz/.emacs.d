@@ -17,6 +17,6 @@
 
 ;;(setq ring-bell-function (lambda () (message "♪")))
 
-(global-linum-mode t)
+;;(global-linum-mode t)
 
 (provide 'config-display)

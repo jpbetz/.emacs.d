@@ -5,9 +5,9 @@
 ;; diff-hl
 (use-package diff-hl
   :config
-  (global-diff-hl-mode t)
-  (diff-hl-dired-mode t)
   (unless window-system (diff-hl-margin-mode t))
+  (global-diff-hl-mode t)
+  (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 (provide 'config-git)
