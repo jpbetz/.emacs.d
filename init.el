@@ -11,6 +11,7 @@
 (require 'config-packaging)
 
 ;; Basic Config
+(require 'config-editing)
 (require 'config-display)
 (require 'config-backups)
 

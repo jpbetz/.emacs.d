@@ -1,6 +1,6 @@
 (cond 
- ((find-font (font-spec :name "Knack Nerd Font"))
-  (set-frame-font "Knack Nerd Font")))
+ ((find-font (font-spec :name "Hack Nerd Font Mono"))
+  (set-frame-font "Hack Nerd Font Mono")))
 
 (setq inhibit-splash-screen t)
 ;;(setq inhibit-startup-message t)

@@ -10,6 +10,17 @@
   :config
   (require 'goenv)
 
+  ;; nord colors:
+  ;; https://github.com/arcticicestudio/nord-emacs/blob/b5c1dc762fe3acaa88a0ce9640085d45d0109c43/nord-theme.el#L81
+  (set-face-attribute 'spaceline-highlight-face nil :background (if (display-graphic-p) "#5E81AC" "brightblue")) ;; nord9
+  (set-face-attribute 'spaceline-highlight-face nil :foreground (if (display-graphic-p) "#3B4252" "black")) ;; nord1
+  (set-face-attribute `mode-line nil :background (if (display-graphic-p) "#4C566A" "brightblack")) ;; nord3
+
+  ;; Hide buffer size. Not important enough to keep on the screen all the time.
+  (spaceline-toggle-buffer-size-off)
+  ;; Hide the modified flag. All my files are under git source control and tracked by my git integration anyway.
+  (spaceline-toggle-buffer-modified-off)
+
   ;; Goenv project switching segment
   (spaceline-define-segment goenv
       "Spaceline goenv project and gvm version"
