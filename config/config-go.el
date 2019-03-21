@@ -1,14 +1,14 @@
-(use-package go-mode
-    :config
-  (add-hook 'go-mode-hook
-          (lambda ()
-            (add-hook 'before-save-hook 'gofmt-before-save)
-            (setq tab-width 4)
-            (local-set-key (kbd "M-]") 'godef-jump)
-            (local-set-key (kbd "M-[") 'pop-tag-mark))))
+;; (use-package go-mode
+;;     :config
+;;   (add-hook 'go-mode-hook
+;;           (lambda ()
+;;             (add-hook 'before-save-hook 'gofmt-before-save)
+;;             (setq tab-width 4)
+;;             (local-set-key (kbd "M-]") 'godef-jump)
+;;             (local-set-key (kbd "M-[") 'pop-tag-mark))))
 
-(use-package go-guru)
-(use-package company-go)
+;; (use-package go-guru)
+;; (use-package company-go)
 
 ;; goenv project switching.
 (setq goenv-project-dir (concat (getenv "HOME") "/projects/"))
