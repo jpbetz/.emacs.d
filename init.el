@@ -20,10 +20,10 @@
 (require 'config-modeline)
 
 ;; Tooling Config
-(require 'config-completion)
 (require 'config-git)
 
 ;; Language Config
+(require 'config-languages)
 (require 'config-go)
 
 ;; Local Configuration

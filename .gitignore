@@ -9,3 +9,4 @@ local-init.el
 network-security.data
 \#!*\#
 session.*
+.lsp-session-*
