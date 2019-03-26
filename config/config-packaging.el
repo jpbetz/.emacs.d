@@ -14,4 +14,11 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+;; Run 'paradox-upgrade-packages' to trigger a package update
+(use-package paradox
+  :init
+  (setq paradox-github-token t)
+  (setq paradox-execute-asynchronously t)
+  (setq paradox-automatically-star t))
+
 (provide 'config-packaging)

@@ -16,5 +16,7 @@
 (setq goenv-original-path (getenv "PATH"))
 (require 'goenv)
 (goenv-set-environment (concat (getenv "HOME") "/go") "go1.8.3") ;; Default go environment
+(when (getenv "GOENV_NAME")
+  (goenv (getenv "GOENV_NAME")))
 
 (provide 'config-go)
