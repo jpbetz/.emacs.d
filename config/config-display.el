@@ -19,4 +19,12 @@
 
 ;;(global-linum-mode t)
 
+;; https://www.reddit.com/r/emacs/comments/3u0d0u/how_do_i_make_the_vertical_window_divider_more/
+;; (defun my-change-window-divider ()
+;;   (let ((display-table (or buffer-display-table standard-display-table)))
+;;     (set-display-table-slot display-table 5 ?│) 
+;;     (set-face-foreground 'vertical-border "black")
+;;     (set-window-display-table (selected-window) display-table)))
+;; (add-hook 'window-configuration-change-hook 'my-change-window-divider)
+
 (provide 'config-display)

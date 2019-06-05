@@ -10,3 +10,5 @@ network-security.data
 \#!*\#
 session.*
 .lsp-session-*
+ac-comphist.dat
+transient

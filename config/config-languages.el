@@ -12,20 +12,21 @@
   (global-set-key (kbd "M-n") 'company-complete-common))
 
 ;; Use Language Servers for language integration
-(use-package lsp-mode
-  :commands lsp
-  :config
-  ;; gopls might not be ready yet...
-  ;; (lsp-register-client
-  ;; (make-lsp-client :new-connection (lsp-stdio-connection "gopls")
-  ;;                  :major-modes '(go-mode)
-  ;;                  :server-id 'gopls))
-  (setq lsp-ui-doc-enable nil)
-  (setq lsp-ui-peek-enable nil)
-  (setq lsp-ui-sideline-enable nil)
-  (setq lsp-ui-imenu-enable nil))
+;; (use-package lsp-mode
+;;   :hook (go-mode . lsp)
+;;   :commands lsp
+;;   :config
+;;   ;; gopls might not be ready yet...
+;;   ;; (lsp-register-client
+;;   ;; (make-lsp-client :new-connection (lsp-stdio-connection "gopls")
+;;   ;;                  :major-modes '(go-mode)
+;;   ;;                  :server-id 'gopls))
+;;   (setq lsp-ui-doc-enable nil)
+;;   (setq lsp-ui-peek-enable nil)
+;;   (setq lsp-ui-sideline-enable nil)
+;;   (setq lsp-ui-imenu-enable nil))
 
-(add-hook 'go-mode-hook 'lsp)
+;; (add-hook 'go-mode-hook 'lsp)
 
 ;; TODO: How to enable goimport formatting for go-mode?
 ;; (setq lsp-clients-go-language-server-flags "--format-style="goimports"
