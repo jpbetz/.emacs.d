@@ -1,29 +1,23 @@
-(use-package go-mode
-    :config
-  (add-hook 'go-mode-hook
-          (lambda ()
-            (add-hook 'before-save-hook 'gofmt-before-save)
-            (setq tab-width 4)
-            (local-set-key (kbd "M-]") 'godef-jump)
-            (local-set-key (kbd "M-[") 'pop-tag-mark))))
+(require 'lsp-mode)
 
-;; (use-package go-guru)
-(use-package company-go)
+;; To install:
+;; go install golang.org/x/tools/gopls@latest
 
-;; http://tleyden.github.io/blog/2014/05/22/configure-emacs-as-a-go-editor-from-scratch/
-(defun auto-complete-for-go ()
-  (auto-complete-mode 1))
+;; Company mode
+(setq company-idle-delay 0)
+(setq company-minimum-prefix-length 1)
 
-(use-package go-autocomplete)
-(add-hook 'go-mode-hook 'auto-complete-for-go)
+;; Go - lsp-mode
+;; Set up before-save hooks to format buffer and add/delete imports.
+(defun lsp-go-install-save-hooks ()
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'lsp-organize-imports t t))
+(add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 
-;; goenv project switching.
-(setq goenv-project-dir (concat (getenv "HOME") "/projects/"))
-(setq goenv-gvm-dir (concat (getenv "HOME") "/.gvm/gos/"))
-(setq goenv-original-path (getenv "PATH"))
-(require 'goenv)
-(goenv-set-environment (concat (getenv "HOME") "/go") "go1.12.1") ;; Default go environment
-(when (getenv "GOENV_NAME")
-  (goenv (getenv "GOENV_NAME")))
+;; Disable automatic dialog overlays
+(setq lsp-ui-doc-enable nil)
+
+;; Start LSP Mode
+(add-hook 'go-mode-hook #'lsp-deferred)
 
 (provide 'config-go)
