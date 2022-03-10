@@ -24,7 +24,7 @@
 
 ;; Language Config
 (require 'config-languages)
-(require 'config-go)
+;(require 'config-go)
 
 ;; Local Configuration
 (setq local-config-file (expand-file-name "~/.emacs.d/local-config.el"))
